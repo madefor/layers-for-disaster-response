@@ -1,7 +1,7 @@
 
 <todo>
 
-  <h3>{ title }</h3>
+  <h3>{ title } <a href={ url }>{ url }</a></h3>
 
   <ul>
     <li each={ items.filter(whatShow) }>
@@ -42,6 +42,7 @@
       }
     }
     request.send()
+    this.url = opts.url;
     this.items = items
     this.title = title
 
