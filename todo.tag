@@ -4,7 +4,7 @@
   <h3>{ title } <a href={ url }>{ url }</a></h3>
 
   <ul>
-    <li each={ items.filter(whatShow) }>
+    <li title={ json } each={ items.filter(whatShow) }>
       <label class={ completed: done }>
         <input type="checkbox" checked={ done } onclick={ parent.toggle }> { title }
       </label>
@@ -28,7 +28,7 @@
         if(array[i].type == 'LayerGroup') {
           jumpInto(array[i].entries, current + '/' + array[i].title)
         } else {
-          items.push({title : current + '/' + array[i].title})
+          items.push({title : current + '/' + array[i].title, json : JSON.stringify(array[i])})
         }
       }
     }
